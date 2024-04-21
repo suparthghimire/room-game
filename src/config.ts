@@ -1,15 +1,30 @@
 import type { T_Color } from "./@types";
 
-export const config = {
-	point_size: 60,
-	row_count: 5,
-	column_count: 5,
-	offset: 70,
-	canvas_width: 1000,
-	canvas_height: 1000,
-	canvas_transform_x: 100,
-	canvas_transform_y: 100,
-	text_size: 24,
+function calculateCanvasTransform(config: typeof baseConfig): {
+	x: number;
+	y: number;
+} {
+	const gridWidth =
+		(config.column_count - 1) * (config.point_size + config.offset) +
+		config.point_size;
+	const gridHeight =
+		(config.row_count - 1) * (config.point_size + config.offset) +
+		config.point_size;
+
+	const x = (config.canvas_width - gridWidth) / 2;
+	const y = (config.canvas_height - gridHeight) / 2;
+
+	return { x, y };
+}
+
+const baseConfig = {
+	point_size: 30,
+	row_count: 25,
+	column_count: 45,
+	offset: 30,
+	canvas_width: window?.innerWidth ?? 1000,
+	canvas_height: window?.innerHeight ?? 1000,
+	text_size: 10,
 	hover_color: {
 		r: 90,
 		g: 90,
@@ -26,4 +41,9 @@ export const config = {
 		b: 40,
 		// a: 40,
 	} satisfies T_Color,
+};
+export const config = {
+	...baseConfig,
+	canvas_transform_x: calculateCanvasTransform(baseConfig).x,
+	canvas_transform_y: calculateCanvasTransform(baseConfig).y,
 };

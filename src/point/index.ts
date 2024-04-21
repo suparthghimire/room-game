@@ -65,14 +65,15 @@ export class Point {
 
 		p5Instance.fill(this.fill.r, this.fill.g, this.fill.b, this.fill.a);
 		p5Instance.stroke(255);
+		p5Instance.strokeWeight(2);
 		p5Instance.circle(this.x, this.y, this.radius);
 
-		p5Instance.textSize(config.text_size);
-		p5Instance.fill("orange");
-		p5Instance.noStroke();
-		// set text color to green
-		p5Instance.text(`${this.i}, ${this.j}`, this.x, this.y);
-		p5Instance.textAlign(p5Instance.CENTER, p5Instance.CENTER);
+		// p5Instance.textSize(config.text_size);
+		// p5Instance.fill("orange");
+		// p5Instance.noStroke();
+		// // set text color to green
+		// p5Instance.text(`${this.i}, ${this.j}`, this.x, this.y);
+		// p5Instance.textAlign(p5Instance.CENTER, p5Instance.CENTER);
 	}
 
 	onClick(x: number, y: number) {
@@ -120,9 +121,7 @@ export class Point {
 		const leftiIsOutOfBounds = leftI < 0;
 		const rightiIsOutOfBounds = rightI >= config.column_count;
 
-		console.log("FOR ", this);
 		for (const point of points) {
-			console.log("CHECKING", point);
 			// if it is me, skip
 			if (point.getId() === this.getId()) continue;
 

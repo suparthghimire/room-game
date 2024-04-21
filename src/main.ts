@@ -12,7 +12,7 @@ const sketch = (p: p5) => {
 	const points = board.getPoints();
 
 	p.setup = () => {
-		p.createCanvas(config.canvas_height, config.canvas_width);
+		p.createCanvas(config.canvas_width, config.canvas_height);
 	};
 	p.draw = () => {
 		p.background(40);
