@@ -10,10 +10,12 @@
   },
   "devDependencies": {
     "@types/p5": "^1.7.6",
+    "@types/uuid": "^9.0.8",
     "typescript": "^5.2.2",
     "vite": "^5.2.0"
   },
   "dependencies": {
-    "p5": "^1.9.2"
+    "p5": "^1.9.2",
+    "uuid": "^9.0.1"
   }
 }

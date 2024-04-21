@@ -4,3 +4,8 @@ export type T_Color = {
 	b: number;
 	a?: number;
 };
+
+export type T_Coord = {
+	x: number;
+	y: number;
+};

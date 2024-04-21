@@ -11,10 +11,9 @@ export const config = {
 	canvas_transform_y: 100,
 	text_size: 24,
 	hover_color: {
-		r: 255,
-		g: 255,
-		b: 255,
-		a: 90,
+		r: 90,
+		g: 90,
+		b: 90,
 	} satisfies T_Color,
 	selected_color: {
 		r: 255,
@@ -22,9 +21,9 @@ export const config = {
 		b: 255,
 	} satisfies T_Color,
 	deselected_color: {
-		r: 255,
-		g: 255,
-		b: 255,
-		a: 40,
+		r: 40,
+		g: 40,
+		b: 40,
+		// a: 40,
 	} satisfies T_Color,
 };
